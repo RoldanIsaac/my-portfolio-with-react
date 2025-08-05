@@ -1,12 +1,23 @@
-import { AnimatePresence, easeOut, motion } from "framer-motion";
-import { div } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 
-import AboutContent from "./Content/About";
-import FlyoutLink from "./Flyout/Flyout";
-import NavbarMenu from "@/components/NavbarMenu/NavbarMenu";
+import NavbarIcon from "@/components/NavbarIcon/NavbarIcon";
+// import { home, github, telephone } from "@/assets";
 
 const Navbar = () => {
+  const navOptions = [
+    {
+      icon: null,
+      label: "Home",
+    },
+    {
+      icon: null,
+      label: "Github",
+    },
+    {
+      icon: null,
+      label: "Contact",
+    },
+  ];
   //   const [menuOpen, setMenuOpen] = useState(false);
   //   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -37,7 +48,7 @@ const Navbar = () => {
     <>
       {/* <Headroom> */}
       <nav
-        className={`fixed top-0 left-0 z-50 w-full flex justify-between px-3 py-8 h-1 items-center max-w-[1920px]
+        className={`bg-blue-100/10 border-solid-1 fixed bottom-0 left-0 z-50 w-full flex justify-between px-3 py-8 h-1 items-center max-w-[1920px]
     ${
       hasScrolled
         ? "backdrop-blur-sm border-b border-white/20"
@@ -56,17 +67,17 @@ const Navbar = () => {
             className="hover:scale-120 transition-all"
           /> */}
           <h4
-            className="text-gray-100 text-2xl text-shadow-lg"
+            className="text-gray-100 text-2xl text-shadow-lg text-nowrap"
             style={fontStyles}
           >
-            oli-dev
+            diseñOLI
           </h4>
         </a>
 
-        <div className="flex justify-between w-6/12">
+        <div className="flex justify-between w-2/12">
           {/* Deprecated | No nav links */}
-          {/* <div className="flex flex-row">
-            <FlyoutLink href="#" FlyoutContent={PricingContent}>
+          <div className="flex flex-row gap-8">
+            {/* <FlyoutLink href="#" FlyoutContent={PricingContent}>
               Pricing
             </FlyoutLink>
             <FlyoutLink href="#" FlyoutContent={AboutContent}>
@@ -74,8 +85,12 @@ const Navbar = () => {
             </FlyoutLink>
             <FlyoutLink href="#" FlyoutContent={TokenomicsContent}>
               Tokenomics
-            </FlyoutLink>
-          </div> */}
+            </FlyoutLink> */}
+
+            {navOptions.map((item, index) => (
+              <NavbarIcon key={index} icon={item.icon} label={item.label} />
+            ))}
+          </div>
         </div>
         <button
           onClick={() => setDialogOpen(true)}

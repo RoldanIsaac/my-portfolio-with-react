@@ -1,6 +1,8 @@
+import TV from "@/components/TV/TV";
 import { Section } from "@/layout";
-import { layout } from "@/styles/styles";
-import React from "react";
+import { layout, text } from "@/styles/styles";
+import { button } from "framer-motion/client";
+import { useState } from "react";
 
 const Hero = () => {
   return (
@@ -10,7 +12,10 @@ const Hero = () => {
       // bgColor="linear-gradient(to bottom, transparent, #0c0500)"
       // backgroundSvg={transitionUpBg}
     >
-      Hero
+      <div className="">
+        <div className=""> </div>
+        {/* <TV /> */}
+      </div>
     </Section>
   );
 };

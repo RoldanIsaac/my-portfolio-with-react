@@ -1,0 +1,83 @@
+:root {
+  --ease-spring: linear(
+    0,
+    0.013 0.6%,
+    0.051 1.2%,
+    0.202 2.5%,
+    1.228 8.4%,
+    1.375 9.9%,
+    1.42 10.7%,
+    1.44 11.5%,
+    1.441 12.1%,
+    1.428 12.8%,
+    1.362 14.2%,
+    0.891 20.4%,
+    0.829 21.9%,
+    0.805 23.4%,
+    0.81 24.6%,
+    0.839 26%,
+    1.047 32.2%,
+    1.074 33.6%,
+    1.086 35.1%,
+    1.075 37.5%,
+    0.985 43.5%,
+    0.962 46.9%,
+    0.967 49.3%,
+    1.006 55.3%,
+    1.017 58.7%,
+    0.993 70.3%,
+    1.003 82%,
+    1
+  );
+}
+
+.menu {
+  border-radius: var(--menu-radius);
+  border: solid 1px rgba(220, 220, 220, 0.543);
+  background: linear-gradient(175deg, rgba(128, 128, 128, 0.397), transparent);
+  /* color: var(--color-zinc-100); */
+  /* box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  position: absolute;
+  inset: calc(var(--spacing) * 0);
+  border-radius: 3.40282e38px;
+  padding: 1px; */
+}
+
+.menu-option {
+  background-color: transparent;
+  text-transform: uppercase;
+  width: var(--menu-option-width);
+  border-radius: var(--menu-radius);
+  padding: 8px 32px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(215, 206, 206, 0.68);
+  border: solid 2px transparent;
+  transition: all 200ms var(--ease-spring);
+}
+
+.menu-option::before {
+  width: calc(var(--menu-option-width) + 5px);
+  position: absolute;
+  left: -5px;
+  background: linear-gradient(
+    74deg,
+    var(--color-grdt-from),
+    var(--color-grdt-to)
+  );
+}
+.menu-option:hover {
+}
+
+.menu-option:active {
+  transform: scale(0.9);
+  background-color: black;
+  border: solid 2px rgb(26, 150, 217);
+  color: white;
+  box-shadow: 1px 2px 7px rgb(26, 117, 196);
+}
+.active {
+  background-color: rgb(180, 39, 39);
+}
